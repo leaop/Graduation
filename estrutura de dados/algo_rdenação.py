@@ -28,4 +28,5 @@ def selection_sort(sta):
             sta[j] = sta[min_index]#ponteiro.cabeca
             sta[min_index] = aux#ponteiro.proximo
 
+#Bubblesort
 
