@@ -37,6 +37,13 @@ dados <- dadosT %>% filter(RotatableBond != "NA")
 
 #sumarizando
 summary(dados)
+#quantos dados tem em cada quartil
+quantile(dados$EXACT_MASS, probs = seq(.1,1, by = .05))
+quantile(dados$NumHAcceptors, probs = seq(.25,1, by = .05))
+quantile(dados$NumHDonors, probs = seq(.5,1, by = .05))
+quantile(dados$RingCount, probs = seq(.75,1, by = .05))
+quantile(dados$TPSA, probs = seq(.25,1, by = .05))
+quantile(dados$RotatableBond, probs = seq(.25,1, by = .05))
 
 #pegar os 10 primeiros em ordem depois do tratamento
 dados %>% top_n(10, EXACT_MASS)
@@ -197,6 +204,36 @@ hist(dados$NumHDonors)
 hist(dados$RingCount)
 hist(dados$TPSA)
 
+#extração de planilhas para fora do R Studio
+write.csv(MM, file='MM.csv')#atribuição do nome do arquivo
+
+#plot com cor
+install.packages("tidyverse")
+library(tidyverse)
+ggplot(data=dados)+ geom_point(mapping= aes(x=EXACT_MASS, y=RingCount)) + facet_wrap(~ HumHAcceptors, nrow=2)
+
+
+ggplot(data=dados) +
+  geom_point(mapping= aes(x=EXACT_MASS, y=NumHDonors)) +
+  geom_smooth(mapping= aes(x=EXACT_MASS, y=NumHDonors))
+
+ggplot(data = dados, mapping = aes(x=EXACT_MASS, y=NumHAcceptors)) + geom_point() + geom_smooth()
+
+ggplot(data = dados, mapping = aes(x = EXACT_MASS, y=TPSA)) + geom_point(mapping = aes(color = RingCount)) + geom_smooth()
+
+ggplot(data = dados, mapping = aes(x = EXACT_MASS, y=RingCount)) + geom_point() + geom_smooth(se=FALSE)
+
+ggplot(data = dados, mapping = aes(x = NumHDonors, y=RingCount, color=TPSA)) + 
+  geom_point() +
+  geom_smooth(se = FALSE)
+
+ggplot(data = dados, mapping = aes(x =EXACT_MASS, y=RingCount)) + 
+  geom_point(mapping = aes(color=TPSA)) +
+  geom_smooth(se = FALSE)
+
+ggplot(data = dados, mapping = aes(x =EXACT_MASS, y=RingCount)) +
+  geom_point(size=4, color="white") +
+  geom_point(aes(color=NumHDonors))
 
 
 
