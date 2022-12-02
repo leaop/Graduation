@@ -1,33 +1,27 @@
-#sempre com testes aleatórios
-def somar_matrizes(a, b):
-    """Devolve a soma das matrizes a e b"""
-    assert len(a) == len(b), "escrita"
-    assert len(a[0]) == len(b[0]), "Números de colunas devem ser iguais"
+#sempre coisas aleatórias
+'''c = 's'
+v = []
+while (c == 's' or c=='S'):
+  valor = float(input('Digite um valor: '))
+  v.append(valor)
+  c = input('Continuar? (s/n): ')
+s = 0
+for i in range(len(v)):
+  s+=v[i]
+  print("O resultado é ", s)'''
 
-    m = len(a)
-    n = len(a[0])
+'''import numpy as np
+v = [10,20,10,20,10,20,10,20]
+print(np.mean(v))
+print(np.std(v))'''
 
-    soma = []
-    for i in range(m):
-        linha = []
-        soma.append(linha)
-        for j in range(n):
-            celula = a[i][j] + b[i][j]
-            linha.append(celula)
-    return soma
+x = [['a', 'b'], ['c', 'd']]
+print(x)
+i = str(input('digite uma letra: '))
+x.append(i)
+print(x)
 
-def main():
-    a = [
-      [5.3, 4.0, 7.5],
-      [9.0, 0.0, 9.5],
-      [7.0, 6.9, 7.8]
-    ]
-    b = [
-      [1.0, 1.0, 1.0],
-      [1.0, 1.0, 1.0],
-      [1.0, 1.0, 1.0]
-    ]
-    soma = somar_matrizes(a, b)
-    print(soma)
-
-main()
+'''vetor_paises = ['brasil', 'chile', 'argentina', 'paraguai']
+vetor_inteiros = [80, 90, 61, 34, 98, 11, 29, 34, 87, 79 ]
+vetor_dados = ['peru', 'colombia', 11, 100, 5.85, 6.7, 10 ]
+print(vetor_dados[-len(vetor_dados)])'''
