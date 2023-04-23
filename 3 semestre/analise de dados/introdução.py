@@ -29,4 +29,18 @@ df = pd.json_normalize(data)
 #conversao para CSV
 df.to_csv('ceaps_senado_2015_2022.csv')
 
+#dados de legislatura
+response = requests.get('https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/55/56.json').content
+
+data = json.loads(response)
+
+data['ListaParlamentarLegislatura']['Parlamentares']['Parlamentar'];
+
+df_senadores = pd.json_normalize(data)
+
+df_senadores.to_csv('senadores_2015_2022.csv')
+df_senadores = pd.read_csv('senadores_2015_2022.csv')
+df = pd.read_csv('ceaps_senado_2015_2022.csv')
+df.ano.min()
+
 
