@@ -1,0 +1,15 @@
+Clima,Temperatura,Umidade,Vento,Jogar Tenis
+ensolarado,quente,alta,fraco,não
+ensolarado,quente,alta,forte,não
+nublado,quente,alta,fraco,sim
+chuva,ameno,alta,fraco,sim
+chuva,frio,normal,fraco,sim
+chuva,frio,normal,forte,não
+nublado,frio,normal,forte,sim
+ensolarado,ameno,alta,fraco,não
+ensolarado,frio,normal,fraco,sim
+chuva,ameno,normal,fraco,sim
+ensolarado,ameno,normal,forte,sim
+nublado,ameno,alta,forte,sim
+nublado,quente,normal,fraco,sim
+chuva,ameno,alta,forte,não
