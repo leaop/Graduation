@@ -1,2 +1,0 @@
-# Graduation
- Data Science projects
